@@ -13,6 +13,47 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/greeting', function () {
+
+//     echo 'Hello World!';
+
+// });
+
+// Route::get('/greeting/{name?}', function ($name = null) {
+
+//     if ($name) {
+
+//         echo 'Hello ' . $name . '!';
+
+//     } else {
+
+//         echo 'Hello World!';
+
+//     }
+
+// });
+
+Route::get('/login', function() {
+    echo 'Hello Word';
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::post('/login', function (Illuminate\Http\Request $request) {
+    // todo
+});
+
+Route::post('/login', function (Illuminate\Http\Request $request) {
+    if ($request->username == 'admin'
+        && $request->password == 'admin') {
+        return view('welcome_admin');
+    }
+
+    return view('login_error');
 });
