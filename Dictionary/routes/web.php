@@ -70,7 +70,7 @@ Route::post('/dictionary', function (Illuminate\Http\Request $request) {
         "Computer" => "Máy tính",
     ];
 
-    $searchWord = $request->input('search');
+    $searchWord = $request->search;
     $flag = 0;
 
     foreach ($dictionary as $key => $description) {
